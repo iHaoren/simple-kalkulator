@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  letter-spacing: 1px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  max-width: 100%;
+  background: linear-gradient(45deg, #222831, #210f37);
+}
+
+.kalkulator {
+  padding: 16px;
+  box-shadow: 0 0 15px #000;
+  border: 2px solid rgb(79, 28, 81);
+  border-radius: 15px;
+}
+
+.display input {
+  width: 360px;
+  border: none;
+  outline: none;
+  padding: 20px;
+  margin: 10px;
+  background: transparent;
+  color: #fff;
+  font-size: 40px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.display input::placeholder {
+  color: #fff;
+}
+
+.row button {
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+  background: transparent;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  border: 0;
+  border-radius: 15%;
+  box-shadow: -10px -10px 15px #000;
+  outline: 1px solid #313131;
+  outline-offset: 3px;
+  cursor: pointer;
+}
+
+.row button:active {
+  background: #000;
+  transform: translate(2px, 2px);
+}
+
+.opr {
+  color: #fbff00;
+  background: translate(2px, 2px);
+  font-size: 700;
+}
+
+.eqBtn {
+  background: orangered;
+  font-weight: 900;
+}
+
+/* media query untuk mobile */
+@media (max-width: 467px) {
+  .kalkulator {
+    max-width: 340px;
+    height: 500px;
+  }
+
+  .display input {
+    width: 300px;
+  }
+
+  .row button {
+    width: 50px;
+    height: 50px;
+  }
+}
