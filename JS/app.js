@@ -1,27 +1,25 @@
 let inputBox = document.getElementById("inputBox");
-let btn = document.querySelectorAll("button");
+let button = document.querySelectorAll("button");
 
 let string = "";
 
-btn.forEach((element) => {
-  element.addEventListener("click", (b) => {
-    let btnText = b.target.innerText;
-
-    if (btnText == "=") {
-      string = eval(string).toString();
-      inputBox.value = string;
-    } else if (btnText == "AC") {
-      string = "";
-      inputBox.value = string;
-    } else if (btnText == "DEL") {
-      string = string.slice(0, -1);
-      inputBox.value = string;
-    } else if (b.target.id == "plusMin") {
-      string = (-eval(string)).toString();
-      inputBox.value = string;
-    } else {
-      string += btnText;
-      inputBox.value = string;
-    }
-  });
-});
+button.forEach(element => {
+    element.addEventListener("click", (b) => {
+        if (b.target.innerText == "=") {
+            string = String(eval(string));
+            inputBox.value = string;
+        }else if (b.target.innerText == "AC") {
+            string = "";
+            inputBox.value = string;
+        }else if (b.target.innerText == "DEL") {
+            string = String.substring(0,string.length - 1);
+            inputBox.value =string;
+        }else if (b.target.innerText == "plusMin") {
+            string = String(-eval(string));
+            inputBox.value = string;
+        }else {
+            string += b.target.innerText;
+            inputBox.value = string;
+        }
+    })
+})
